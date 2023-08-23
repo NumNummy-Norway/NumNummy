@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -93,7 +92,7 @@ namespace Num_Nummy.Controllers
                     {
                         UserName = newUser.DisplayName,
                         DisplayName = newUser.UserName,
-                       
+                        
                         Tokens = _token.CreateToken(newUser)
 
                     };
@@ -106,7 +105,7 @@ namespace Num_Nummy.Controllers
 
 
         [HttpGet("current")]
-        
+        [Authorize]
         public async Task<ActionResult<UserDTO>> currentUser()
         {
 

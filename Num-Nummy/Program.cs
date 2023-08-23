@@ -75,6 +75,7 @@ catch (Exception e)
 app.MapControllers();
 
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
